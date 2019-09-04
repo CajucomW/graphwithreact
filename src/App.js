@@ -1,6 +1,10 @@
 import React, { Component } from 'react';
 import './App.css';
 
+
+import MainContentBorder from './components/MainContentBorder/MainContentBorder.js';
+import MainTitle from './components/MainTitle/MainTitle.js';
+
 class App extends Component {
   state = {
     searchTerm: '',
@@ -81,24 +85,17 @@ class App extends Component {
   render() {
     return (
       <div className="App">
-        <h1 className="MainTitle">Stock Market Prices</h1>
-        <div className="MainContentBorder">
-          {
-            this.state.stockList.map(data => (
-              <div className="BarsInGraph" style={{height: (data.price / 30) + "%"}}>
-                <h2 className="BarNamePosition">{data.symbol}<br /> {data.price}</h2>
-                </div>
-                ))
-            }
+        <MainTitle />
+          <MainContentBorder />
+        <div className="InputArea">
+          <input
+              placeholder="Enter Stock Symbol to Add or Remove"
+              className="InputField"
+              value={this.state.searchTerm}
+              onChange={this.newOnSearchTermChange} /><br />
+          <button className="SubmitStyle" onClick={() => this.onSubmit()}>Submit</button><br />
+          <button className="RemoveStyle" onClick={() => this.removeStock()}>Remove</button>
         </div>
-        <input
-            placeholder="Enter Stock Symbol to Add or Remove"
-            className="InputField"
-            value={this.state.searchTerm}
-            onChange={this.newOnSearchTermChange} /><br />
-        <button className="SubmitStyle" onClick={() => this.onSubmit()}>Submit</button><br />
-        <button className="RemoveStyle" onClick={() => this.removeStock()}>Remove</button>
-
           
       </div>
     );

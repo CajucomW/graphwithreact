@@ -1,0 +1,33 @@
+.MainContentBorder {
+    background-color: lightsteelblue;
+    border: 2px solid;
+    width: 80vw;
+    height: 60vh;
+    position: relative;
+    margin: auto;
+    display: flex;
+    justify-content: space-around;
+    column-gap: 10px;
+    align-items: flex-end;
+    padding-left: 1vw;
+    padding-right: 1vw;
+}
+
+.BarsInGraph {
+    border: 5px;
+    font-family: 'Bitter', serif;
+    text-align: center;
+    width: 15vw;
+    transition: 0.5s;
+    height: 50%;
+    background-color: #ED1B24;
+}
+.BarsInGraph:hover {
+    width: 15.3vw;
+    box-shadow: 0 -2px 10px 0 grey;
+ }
+
+.BarNamePosition {
+    position: relative;
+    top: -75px;
+}
