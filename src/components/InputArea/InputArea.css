@@ -1,0 +1,19 @@
+.InputField {
+    display: block;
+    margin-left: 8vw;
+    margin-top: 15px;
+    width: 234px;
+    height: 50px;
+}
+
+.SubmitStyle {
+    display: block;
+    margin-left: 107px;
+    width: 100px;
+}
+
+.RemoveStyle {
+    display: block;
+    margin-left: 107px;
+    width: 100px;
+}
