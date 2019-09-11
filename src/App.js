@@ -15,6 +15,8 @@ class App extends Component {
         price: '',
       },
     ],
+    stocksToDisplay: ["CMG", "MCD", "WEN", "PEP", "COKE"]
+    // add to this list when adding/subtracting stock
   };
 
   componentDidMount = () => {
@@ -24,12 +26,7 @@ class App extends Component {
         
         let startingList = [];
         for (let item of data.stockList) {
-          if (
-                item.symbol === "CMG"
-                || item.symbol === "MCD"
-                || item.symbol === "WEN"
-                || item.symbol === "PEP" 
-                || item.symbol === "COKE") {
+          if (this.state.stocksToDisplay.includes(item.symbol)) {
               startingList.push(item);
           }
         }
