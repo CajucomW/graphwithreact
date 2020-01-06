@@ -6,7 +6,6 @@ Working on a simple Bar Graph app for stock market prices. The app currently has
 
 TODO: 
 
-- state.stockList returns an ARRAY. To remove items in the ARRAY,
-- specify which one to delete. Connect the ARRAY w/ specific SYMBOLs.
-- Look into 'removeChild' to remove elements
-- Another option in using the .filtered method to remove items in the ARRAY
+- add function that removes Bars/Items in graph
+- produce error message when item in search bar is invalid/missing
+- styling improvements
