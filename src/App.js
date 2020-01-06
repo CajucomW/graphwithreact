@@ -8,7 +8,7 @@ import InputArea from './components/InputArea/InputArea';
 
 class App extends Component {
   state = {
-    searchTerm: '',
+    symbolToSearch: '',
     stockList: [
       {
         symbol: '',
@@ -37,22 +37,22 @@ class App extends Component {
       });
   }
 
-  newOnSearchTermChange = (ev) => {
+  newSymbolToChange = (ev) => {
     let value = ev.target.value;
     this.setState({
-       searchTerm: value,
+       symbolToSearch: value,
     });
   }
 
   onSubmit = () => {
     let listPlusInput = this.state.stockList;
-    fetch('https://financialmodelingprep.com/api/v3/stock/real-time-price/' + this.state.searchTerm)
+    fetch('https://financialmodelingprep.com/api/v3/stock/real-time-price/' + this.state.symbolToSearch)
         .then(response => response.json())
         .then(data => {
           listPlusInput.push(data)
           this.setState({
             stockList: listPlusInput,
-            searchTerm: '',
+            symbolToSearch: '',
           });
         })
 
@@ -73,11 +73,13 @@ class App extends Component {
         <MainTitle 
           text="Stock Market Prices"/>
 
-        <MainContentBorder stockList={this.state.stockList} />
+        <MainContentBorder 
+          stockList={this.state.stockList} />
+
         <InputArea 
-        value={this.state.searchTerm}
-        newOnSearchTermChange={this.newOnSearchTermChange}
-        onClickSubmit={this.onSubmit}
+          value={this.state.symbolToSearch}
+          newSymbolToChange={this.newSymbolToChange}
+          onClickSubmit={this.onSubmit}
         // removeStock={this.state.removeStock} 
         />
           

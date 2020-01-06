@@ -11,8 +11,20 @@ class MainContentBorder extends Component {
         <div className="MainContentBorder">
           {
             this.props.stockList.map(data => (
-              <div className="BarsInGraph" style={{height: (data.price / 30) + "%"}}>
-                <h2 className="BarNamePosition">{data.symbol}<br /> {data.price}</h2>
+              <div className="BarsInGraph"
+              style={{height: (data.price / 30) + "%"}}>
+                {/* Add style in-code so height matches data provided */}
+                {/* by API. */}
+
+                {/* Default height is 1% */}
+
+                {/* Height = price / 30, then "%" is added to CSS can read */}
+
+                <h2 className="BarNamePosition">
+                  {data.symbol}<br /> 
+                  {data.price}
+                  </h2>
+                  
                 </div>
                 ))
             }

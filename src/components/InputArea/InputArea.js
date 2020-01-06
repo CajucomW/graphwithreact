@@ -13,7 +13,7 @@ class InputArea extends Component {
             className="InputField"
             placeholder="Enter Stock Symbol to Add"
             value={this.props.value}
-            onChange={this.props.newOnSearchTermChange} /><br />
+            onChange={this.props.newSymbolToChange} /><br />
           <Button onClick={this.props.onClickSubmit}>Submit</Button>
         </div>
         
