@@ -25,7 +25,6 @@
     text-align: center;
     width: 15vw;
     transition: 0.5s;
-    height: 50%;
     background-color: #ED1B24;
 }
 .BarsInGraph:hover {
