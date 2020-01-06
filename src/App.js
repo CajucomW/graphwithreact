@@ -70,7 +70,9 @@ class App extends Component {
   render() {
     return (
       <div className="App">
-        <MainTitle />
+        <MainTitle 
+          text="Stock Market Prices"/>
+
         <MainContentBorder stockList={this.state.stockList} />
         <InputArea 
         value={this.state.searchTerm}

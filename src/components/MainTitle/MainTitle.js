@@ -6,7 +6,7 @@ class MainTitle extends Component {
     console.log('Main Title rendering');
     return (
         <h1 className="MainTitle">
-            Stock Market Prices
+            {this.props.text}
             </h1>
     );
   }

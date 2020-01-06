@@ -7,6 +7,6 @@ Working on a simple Bar Graph app for stock market prices. The app currently has
 TODO: 
 
 - state.stockList returns an ARRAY. To remove items in the ARRAY,
-- I need to specify which on to delete. Somehow, I need to connect the ARRAY w/ specific SYMBOLs.
+- specify which one to delete. Connect the ARRAY w/ specific SYMBOLs.
 - Look into 'removeChild' to remove elements
 - Another option in using the .filtered method to remove items in the ARRAY
