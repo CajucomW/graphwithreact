@@ -4,6 +4,7 @@ import './App.css';
 import MainTitle from './components/MainTitle/MainTitle.js';
 import MainContentBorder from './components/MainContentBorder/MainContentBorder';
 import InputArea from './components/InputArea/InputArea';
+import Button from './components/Button/Button';
 
 
 class App extends Component {
@@ -55,8 +56,7 @@ class App extends Component {
             symbolToSearch: '',
           });
         })
-
-        
+      
   }
 
   removeStock = () => {
@@ -71,7 +71,7 @@ class App extends Component {
     return (
       <div className="App">
         <MainTitle 
-          text="Stock Market Prices"/>
+          text="Stock Market Prices" />
 
         <MainContentBorder 
           stockList={this.state.stockList} />
@@ -82,6 +82,10 @@ class App extends Component {
           onClickSubmit={this.onSubmit}
         // removeStock={this.state.removeStock} 
         />
+
+        <Button
+          text="Submit"
+          selected={this.onSubmit} />
           
       </div>
     );
