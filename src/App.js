@@ -65,6 +65,9 @@ class App extends Component {
     // Look into 'removeChild' to remove elements
     // Another option in using the .filtered method to remove items in the ARRAY
     // Quidditch Challenge would work
+
+    // How about making a list of current stock in the graph (stockList), then redefining it by removing
+    // whatever was entered in the input field?
   }
 
   render() {
