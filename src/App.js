@@ -59,7 +59,9 @@ class App extends Component {
       
   }
 
-  removeStock = () => {
+  // removeStock = () => {
+  //   let currentList = this.state.stockList;
+
     // TODO: state.stockList returns an ARRAY. To remove items in the ARRAY,
     // I need to specify which on to delete. Somehow, I need to connect the ARRAY w/ specific SYMBOLs.
     // Look into 'removeChild' to remove elements
@@ -68,7 +70,7 @@ class App extends Component {
 
     // How about making a list of current stock in the graph (stockList), then redefining it by removing
     // whatever was entered in the input field?
-  }
+  // }
 
   render() {
     return (
@@ -80,14 +82,26 @@ class App extends Component {
           stockList={this.state.stockList} />
 
         <InputArea 
+          placeholder="Enter Stock Symbol to Add"
           value={this.state.symbolToSearch}
           newSymbolToChange={this.newSymbolToChange}
-          onClickSubmit={this.onSubmit}
-        // removeStock={this.state.removeStock} 
+          // onClickSubmit={this.onSubmit}
+          // removeStock={this.state.removeStock} 
         />
 
         <Button
-          text="Submit"
+          text="Add"
+          selected={this.onSubmit} />
+
+        <InputArea 
+          placeholder="Enter Stock Symbol to Remove"
+          value={this.state.symbolToSearch}
+          newSymbolToChange={this.newSymbolToChange}
+          // Reserve this area to REMOVE data from graph
+        />
+
+        <Button
+          text="Remove"
           selected={this.onSubmit} />
           
       </div>

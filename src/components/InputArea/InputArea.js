@@ -11,7 +11,7 @@ class InputArea extends Component {
        <div className="InputArea">
           <input
             className="InputField"
-            placeholder="Enter Stock Symbol to Add"
+            placeholder={this.props.placeholder}
             value={this.props.value}
             onChange={this.props.newSymbolToChange} /><br />
           {/* <Button onClick={this.props.onClickSubmit}>Submit</Button> */}
