@@ -40,7 +40,10 @@ class App extends Component {
   }
 
   newSymbolToChange = (ev) => {
-    let value = ev.target.value;
+    let upper = ev.target.value;
+    let value = upper.toUpperCase();
+    // use .toUpperCase to automatically set string in uppercase to match API text
+
     this.setState({
        symbolToSearch: value,
     });
@@ -63,55 +66,27 @@ class App extends Component {
   removeValue = () => {
     let currentList = this.state.stockList;
     let removeThis = this.state.symbolToSearch;
-    console.log("symbol entered", removeThis);
 
     for (let item of currentList) {
-      console.log(item.symbol);
       if (item.symbol === removeThis) {
-        console.log("MATCH!", item.symbol);
+      // if the item symbol is equal to 'removeThis'
+
         let removeThisNumber = currentList.indexOf(item);
-        console.log("This is the index number:", removeThisNumber);
+        // then assign that item to 'removeThisNumber'
+        // .indexOf looks in the array for the specific item and 
+          // tells us it's position/number
+
         currentList.splice(removeThisNumber, 1);
-      } else {
-        console.log("no match!");
+        // .splice either ADDs or REMOVEs an item from the array
+        // the .splice method rearranges the original array
+        }
       }
-      // let index = currentList.indexOf(removeThis);
+      this.setState({
+        stockList: currentList,
+        symbolToSearch: '',
+      });
     }
-    console.log("current list", currentList);
 
-    
-    
-
-
-  }
-
-
-    // let itemPosition = listPlusInput.indexOf(removeThis);
-    // console.log('item position?', itemPosition);
-
-    // let filtered = listPlusInput.filter(
-    //   item => item !== removeThis
-    //   );
-    //   console.log("filtered list", filtered);
-
-    // let filtered = listPlusInput.filter(function(item) {
-    //   return item !== removeThis
-    //   })
-    // console.log("filtered list", filtered);
-  // }
-
-  // removeStock = () => {
-  //   let currentList = this.state.stockList;
-
-    // TODO: state.stockList returns an ARRAY. To remove items in the ARRAY,
-    // I need to specify which on to delete. Somehow, I need to connect the ARRAY w/ specific SYMBOLs.
-    // Look into 'removeChild' to remove elements
-    // Another option in using the .filtered method to remove items in the ARRAY
-    // Quidditch Challenge would work
-
-    // How about making a list of current stock in the graph (stockList), then redefining it by removing
-    // whatever was entered in the input field?
-  // }
 
   render() {
     return (
@@ -126,8 +101,6 @@ class App extends Component {
           placeholder="Enter Stock Symbol to Add or Remove"
           value={this.state.symbolToSearch}
           newSymbolToChange={this.newSymbolToChange}
-          // onClickSubmit={this.addValue}
-          // removeStock={this.state.removeStock} 
         />
 
         <Button

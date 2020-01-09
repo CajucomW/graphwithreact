@@ -14,6 +14,7 @@ class InputArea extends Component {
             placeholder={this.props.placeholder}
             // placeholder line above was rewritten so I can write different
               // text in the fields
+              
             value={this.props.value}
             onChange={this.props.newSymbolToChange} /><br />
           {/* <Button onClick={this.props.onClickSubmit}>Submit</Button> */}
