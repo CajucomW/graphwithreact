@@ -69,6 +69,8 @@ class App extends Component {
       console.log(item.symbol);
       if (item.symbol === removeThis) {
         console.log("MATCH!", item.symbol);
+        let a = currentList.indexOf(item);
+        console.log(a);
       } else {
         console.log("no match!");
       }
