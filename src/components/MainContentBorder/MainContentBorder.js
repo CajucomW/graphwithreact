@@ -14,7 +14,7 @@ class MainContentBorder extends Component {
               <div className="BarsInGraph"
               style={{height: (data.price / 30) + "%"}}>
                 {/* Add style in-code so height matches data provided */}
-                {/* by API. */}
+                  {/* by API. */}
 
                 {/* Default height is 1% */}
 

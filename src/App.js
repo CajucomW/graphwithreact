@@ -31,10 +31,11 @@ class App extends Component {
               startingList.push(item);
           }
         }
-// make startingList become stockList Michael's suggestion
+        // make startingList become stockList Michael's suggestion
         this.setState({
           stockList: startingList,
         });
+        // console.log("current list", this.state.stockList)
       });
   }
 
@@ -45,7 +46,7 @@ class App extends Component {
     });
   }
 
-  onSubmit = () => {
+  addValue = () => {
     let listPlusInput = this.state.stockList;
     fetch('https://financialmodelingprep.com/api/v3/stock/real-time-price/' + this.state.symbolToSearch)
         .then(response => response.json())
@@ -55,9 +56,45 @@ class App extends Component {
             stockList: listPlusInput,
             symbolToSearch: '',
           });
-        })
-      
+        });
+        // console.log("current list", this.state.stockList)
   }
+
+  removeValue = () => {
+    let currentList = this.state.stockList;
+    let removeThis = this.state.symbolToSearch;
+    console.log("symbol entered", removeThis);
+
+    for (let item of currentList) {
+      console.log(item.symbol);
+      if (item.symbol === removeThis) {
+        console.log("MATCH!", item.symbol);
+      } else {
+        console.log("no match!");
+      }
+      // let index = currentList.indexOf(removeThis);
+    }
+
+    
+    
+
+
+  }
+
+
+    // let itemPosition = listPlusInput.indexOf(removeThis);
+    // console.log('item position?', itemPosition);
+
+    // let filtered = listPlusInput.filter(
+    //   item => item !== removeThis
+    //   );
+    //   console.log("filtered list", filtered);
+
+    // let filtered = listPlusInput.filter(function(item) {
+    //   return item !== removeThis
+    //   })
+    // console.log("filtered list", filtered);
+  // }
 
   // removeStock = () => {
   //   let currentList = this.state.stockList;
@@ -82,27 +119,22 @@ class App extends Component {
           stockList={this.state.stockList} />
 
         <InputArea 
-          placeholder="Enter Stock Symbol to Add"
+          placeholder="Enter Stock Symbol to Add or Remove"
           value={this.state.symbolToSearch}
           newSymbolToChange={this.newSymbolToChange}
-          // onClickSubmit={this.onSubmit}
+          // onClickSubmit={this.addValue}
           // removeStock={this.state.removeStock} 
         />
 
         <Button
           text="Add"
-          selected={this.onSubmit} />
+          selected={this.addValue} />
 
-        <InputArea 
-          placeholder="Enter Stock Symbol to Remove"
-          value={this.state.symbolToSearch}
-          newSymbolToChange={this.newSymbolToChange}
-          // Reserve this area to REMOVE data from graph
-        />
+        <br />
 
         <Button
           text="Remove"
-          selected={this.onSubmit} />
+          selected={this.removeValue} />
           
       </div>
     );
