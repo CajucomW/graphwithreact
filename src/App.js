@@ -69,13 +69,15 @@ class App extends Component {
       console.log(item.symbol);
       if (item.symbol === removeThis) {
         console.log("MATCH!", item.symbol);
-        let a = currentList.indexOf(item);
-        console.log(a);
+        let removeThisNumber = currentList.indexOf(item);
+        console.log("This is the index number:", removeThisNumber);
+        currentList.splice(removeThisNumber, 1);
       } else {
         console.log("no match!");
       }
       // let index = currentList.indexOf(removeThis);
     }
+    console.log("current list", currentList);
 
     
     
