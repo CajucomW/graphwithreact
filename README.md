@@ -8,6 +8,6 @@ Link to Heroku App [here](https://whispering-thicket-32277.herokuapp.com/).
 
 TODO: 
 
-- add function that removes Bars/Items in graph
+- modify stocks to display will be unchanged after "soft" refresh
 - produce error message when item in search bar is invalid/missing
 - styling improvements

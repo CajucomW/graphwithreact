@@ -60,7 +60,7 @@ class App extends Component {
             symbolToSearch: '',
           });
         });
-        // console.log("current list", this.state.stockList)
+    console.log("current list", this.state.stockList)
   }
 
   removeValue = () => {
@@ -85,6 +85,7 @@ class App extends Component {
         stockList: currentList,
         symbolToSearch: '',
       });
+      console.log("current list", this.state.stockList);
     }
 
 
