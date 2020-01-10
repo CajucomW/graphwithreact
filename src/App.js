@@ -50,8 +50,14 @@ class App extends Component {
   }
 
   addValue = () => {
-    let listPlusInput = this.state.stockList;
-    fetch('https://financialmodelingprep.com/api/v3/stock/real-time-price/' + this.state.symbolToSearch)
+    console.log("symbol to search", this.state.symbolToSearch);
+    let value = this.state.symbolToSearch;
+    if (value.length >= 3) {
+    // this makes sure the market symbols have, at least 3 letters
+    // another approach is to check the API whether the symbol exists
+
+      let listPlusInput = this.state.stockList;
+      fetch('https://financialmodelingprep.com/api/v3/stock/real-time-price/' + this.state.symbolToSearch)
         .then(response => response.json())
         .then(data => {
           listPlusInput.push(data)
@@ -60,7 +66,11 @@ class App extends Component {
             symbolToSearch: '',
           });
         });
-    console.log("current list", this.state.stockList)
+      // console.log("current list", this.state.stockList);
+      // console.log(this.state.symbolToSearch);
+    } else {
+      alert("Please enter valid stock market symbol.");
+    }
   }
 
   removeValue = () => {
@@ -81,11 +91,11 @@ class App extends Component {
         // the .splice method rearranges the original array
         }
       }
-      this.setState({
-        stockList: currentList,
-        symbolToSearch: '',
-      });
-      console.log("current list", this.state.stockList);
+    this.setState({
+      stockList: currentList,
+      symbolToSearch: '',
+    });
+    // console.log("current list", this.state.stockList);
     }
 
 
