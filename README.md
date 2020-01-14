@@ -8,5 +8,6 @@ Link to Heroku App [here](https://whispering-thicket-32277.herokuapp.com/).
 
 TODO: 
 
+- improve mobile responsiveness
 - at input, search API for valid stock market symbols
 - styling improvements
