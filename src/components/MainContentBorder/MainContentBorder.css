@@ -19,7 +19,9 @@
     text-align: center;
     width: 15vw;
     transition: 0.5s;
-    height: 1%;
+    transition-property: height;
+    transition-delay: 0.5s;
+    /* height: 1%; */
     background-color: #ED1B24;
 }
 .BarsInGraph:hover {
