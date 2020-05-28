@@ -19,7 +19,9 @@
     text-align: center;
     width: 15vw;
     transition: 0.5s;
-    height: 1%;
+    transition-property: height;
+    transition-delay: 0.5s;
+    /* height: 1%; */
     background-color: #ED1B24;
 }
 .BarsInGraph:hover {
@@ -30,4 +32,17 @@
 .BarNamePosition {
     position: relative;
     top: -75px;
+}
+
+@media (max-width: 720px) {
+    .BarNamePosition {
+        font-size: 9pt;
+        transition-duration: 0.5s;
+    }
+}
+
+@media (min-width: 720px) {
+    .BarNamePosition {
+        transition-duration: 0.5s;
+    }
 }
