@@ -12,8 +12,8 @@ Link to Heroku App [here](https://whispering-thicket-32277.herokuapp.com/).
 
 TODO: 
 
-- FIND ANOTHER API LINK
+- at input, search API for valid stock market symbols
+    - app breaks otherwise
 - FIX code format
 - improve mobile responsiveness
-- at input, search API for valid stock market symbols
 - styling improvements
