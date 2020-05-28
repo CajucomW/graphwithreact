@@ -12,8 +12,8 @@ class App extends Component {
     symbolToSearch: '',
     stockList: [
       {
-        symbol: 'GOLD',
-        price: '100',
+        symbol: '',
+        price: '',
       },
     ],
     stocksToDisplay: ["AAPL"]
@@ -36,7 +36,7 @@ class App extends Component {
         this.setState({
           stockList: startingList,
         });
-        // console.log("current list", this.state.stockList)
+        console.log("current stockList", this.state.stockList)
       });
   }
 
@@ -61,7 +61,8 @@ class App extends Component {
       fetch('https://financialmodelingprep.com/api/v3/quote-short/' + this.state.symbolToSearch + '?apikey=f6f66953fd5563ad067b90598693e9c2')
         .then(response => response.json())
         .then(data => {
-          listPlusInput.push(data)
+		  console.log("this is listPlusInput", data[0])
+          listPlusInput.push(data[0])
           this.setState({
             stockList: listPlusInput,
             symbolToSearch: '',
