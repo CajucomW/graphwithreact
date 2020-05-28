@@ -12,21 +12,22 @@ class App extends Component {
     symbolToSearch: '',
     stockList: [
       {
-        symbol: '',
-        price: '',
+        symbol: 'GOLD',
+        price: '100',
       },
     ],
-    stocksToDisplay: ["CMG", "MCD", "WEN", "PEP", "COKE"]
+    stocksToDisplay: ["AAPL"]
     // add to this list when adding/subtracting stock
   };
 
   componentDidMount = () => {
-    fetch("https://financialmodelingprep.com/api/v3/stock/real-time-price/")
+	console.log("fetching should be happening here")
+    fetch("https://financialmodelingprep.com/api/v3/quote-short/AAPL?apikey=f6f66953fd5563ad067b90598693e9c2")
       .then(response => response.json())
       .then(data => {
-        
+        console.log("this is data", data, "and it's loading")
         let startingList = [];
-        for (let item of data.stockList) {
+        for (let item of data) {
           if (this.state.stocksToDisplay.includes(item.symbol)) {
               startingList.push(item);
           }
@@ -57,7 +58,7 @@ class App extends Component {
     // another approach is to check the API whether the symbol exists
 
       let listPlusInput = this.state.stockList;
-      fetch('https://financialmodelingprep.com/api/v3/stock/real-time-price/' + this.state.symbolToSearch)
+      fetch('https://financialmodelingprep.com/api/v3/quote-short/' + this.state.symbolToSearch + '?apikey=f6f66953fd5563ad067b90598693e9c2')
         .then(response => response.json())
         .then(data => {
           listPlusInput.push(data)
